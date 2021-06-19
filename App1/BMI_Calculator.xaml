@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="App1.Page1" Title="BMI"
+             Padding="0,5,0,0"
+             BackgroundColor="Black">
+      
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" 
+                     VerticalOptions="Center" 
+                     Spacing="10"  >
+           
+            <Label x:Name="NavTitle"
+                   Text="BMI" 
+                   FontSize="24" 
+                   TextColor="White"
+                   VerticalTextAlignment="Center" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="CenterAndExpand"
+                   xct:TouchEffect.PressedOpacity="0.6"
+                   />
+            
+            <Button x:Name="next_page" 
+                    BackgroundColor="Transparent" 
+                    IsVisible="false"
+                    TextColor="White" 
+                    Text="next page >>>" 
+                    FontSize="18" 
+                    FontAttributes="Bold" 
+                    Clicked="Button_Clicked" 
+                    HorizontalOptions="End" 
+                   />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2.8*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".9*"/>
+            <ColumnDefinition Width=".7*"/>
+            <ColumnDefinition Width=".7*"/>
+            <ColumnDefinition Width=".9*"/>
+        </Grid.ColumnDefinitions>
+        <BoxView Color="#2196F3" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Opacity="0.2" Margin="10,5,10,0" />
+        <BoxView Color="#2196F3" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Opacity="0.2" Margin="10,5,10,0"/>
+        <BoxView Color="#2196F3" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Opacity="0.2" Margin="10,5,10,0"/>
+        <BoxView Color="#2196F3" Grid.Row="4" Grid.Column="0"  Grid.ColumnSpan="4" Opacity="0.2" Margin="10,5,10,0" />
+        <BoxView Color="#2196F3" Grid.Row="0" Grid.Column="0"  Grid.ColumnSpan="4" Opacity="0.2" Margin="10,5,10,0" />
+
+
+
+
+        <Picker x:Name="Gender" 
+                SelectedIndexChanged="OnEntryTextChanged"  
+                Grid.Row="0" 
+                Grid.Column="1"
+                HorizontalOptions="FillAndExpand" 
+                Title="Gender">
+            <Picker.Items>
+                <x:String>Man</x:String>
+                <x:String>Woman</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry x:Name="Age" 
+               Grid.Row="0" 
+               Grid.Column="2" 
+               Placeholder="Age" 
+               TextChanged="OnEntryTextChanged" 
+               ReturnType="Next"></Entry>
+
+        <RadioButton  x:Name="button_cm"  
+                      Grid.Row="1" 
+                      Grid.Column="0" 
+                      Content="cm" 
+                      GroupName="weight"  
+                      HorizontalOptions="End"  
+                      IsChecked="True" 
+                      CheckedChanged="OnEntryTextChanged">            
+        </RadioButton>
+
+        <RadioButton x:Name="button_in" 
+                     Grid.Row="1" 
+                     Grid.Column="3" 
+                     Content="in"   
+                     HorizontalOptions="Start"  
+                     GroupName="weight" 
+                     CheckedChanged="OnEntryTextChanged"/>
+
+        <RadioButton x:Name="button_kg" 
+                     Grid.Row="2" 
+                     Grid.Column="0" 
+                     Content="kg" 
+                     GroupName="hight"
+                     HorizontalOptions="End" 
+                     IsChecked="True" 
+                     CheckedChanged="OnEntryTextChanged">
+            
+        </RadioButton>
+
+        <RadioButton  x:Name="button_lbs" 
+                      Grid.Row="2" 
+                      Grid.Column="3" 
+                      Content="lbs"
+                      GroupName="hight" 
+                      HorizontalOptions="Start" 
+                      CheckedChanged="OnEntryTextChanged" >
+            
+        </RadioButton>
+
+        <Entry  x:Name="EntryHight"  
+                Grid.Column="1"  
+                Grid.ColumnSpan="2" 
+                TextChanged="OnEntryTextChanged"  
+                Grid.Row="1" 
+                Placeholder="Hight" 
+                ReturnType="Next"/>
+
+        <Entry x:Name="EntryWeight" 
+               Grid.Column="1" 
+               Grid.ColumnSpan="2" 
+               TextChanged="OnEntryTextChanged" 
+               Grid.Row="2" 
+               Placeholder="Weight"  />
+
+        <Label  x:Name="BMI_result" 
+                Text="BMI!" Grid.Row="3" 
+                Grid.Column="1" 
+                Grid.ColumnSpan="2" 
+                Style="{DynamicResource Key=label_style}" 
+                TextColor="Wheat" 
+                FontSize="20" 
+                Padding="10"/>
+        <Label  x:Name="CaloriesPD" 
+                Text="Calories per day!" 
+                Grid.Row="3" Grid.Column="0"  
+                Style="{DynamicResource Key=label_style}" 
+                TextColor="Wheat" 
+                FontSize="15" 
+                Padding="10,0,0,0"/>
+        
+        <Label  x:Name="Message" 
+                Text="You are PERFECT!" 
+                Grid.Row="3" 
+                Grid.Column="3" 
+                Style="{DynamicResource Key=label_style}" 
+                TextColor="Wheat" 
+                FontSize="15" 
+                Padding="0,0,10,0"/>
+
+        <Image  Grid.Row="4" Grid.ColumnSpan="4" x:Name="Bmi_Picture" Source="woman.png" Margin="10"></Image>
+        
+        
+    </Grid>
+
+</ContentPage>
+
+

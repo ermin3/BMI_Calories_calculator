@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+   
+     xmlns:app1="clr-namespace:App1"
+ 
+    x:Class="App1.AllFood">
+
+    <StackLayout Padding="20">
+        <StackLayout HeightRequest="500">
+        <ListView x:Name="collectedEatenFood" 
+           
+                  Header="{Binding}" 
+                 
+                  VerticalOptions="Center" 
+                  Margin="10,10,10,10" 
+                  ItemSelected="lista_ItemSelected" >
+
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ViewCell >
+
+                        <Grid Padding="5" RowSpacing="10" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"  />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1.5*" />
+                                <ColumnDefinition Width="1.5*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                Source="{Binding ImageUrl}"
+                                Aspect="AspectFill"
+                                HeightRequest="40"
+                                WidthRequest="60" />
+                            <Label
+                                Grid.Column="1" TextColor="White"
+                                Text="{Binding Name}"
+                                FontAttributes="Bold"
+                                VerticalOptions="Center"/>
+                            <Label x:Name="C"
+                                Grid.Column="2" TextColor="White"
+                                Text="{Binding Calories}"
+                                VerticalOptions="Center"/>
+                            <Label
+                                Grid.Column="3" TextColor="White"
+                                Text="{Binding Proteins}"
+                                VerticalOptions="Center"/>
+                            <Label
+                                Grid.Column="4" TextColor="White"
+                                Text="{Binding Carbs}"
+                                VerticalOptions="Center"/>
+                            <Label
+                                Grid.Column="5" TextColor="White"
+                                Text="{Binding Fat}"
+                                VerticalOptions="Center"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid BackgroundColor="#2A9CE5" Padding="5" VerticalOptions="Center" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1.5*"  />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.3*" />
+                            <ColumnDefinition Width="1.3*" />
+                            <ColumnDefinition Width="1.2*" />
+                            <ColumnDefinition Width="1.5*" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0" Text="Calories in 100gr"  TextColor="White" HorizontalOptions="CenterAndExpand"/>
+                        <Label Grid.Column="1" Text="Name" TextColor="White" HorizontalOptions="Center"  ></Label>
+                        <Label Grid.Column="2" Text="Calorie" TextColor="White" ></Label>
+                        <Label Grid.Column="3" Text="Protein" TextColor="White" ></Label>
+                        <Label Grid.Column="4" Text="Carb" TextColor="White" ></Label>
+                        <Label Grid.Column="5" Text="Fat" TextColor="White" ></Label>
+                    </Grid>
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+        </ListView>
+        </StackLayout>
+        <StackLayout HeightRequest="50">
+            <Button Text="Erase" Clicked="Erase_Buton_Clicked" IsEnabled="True" ></Button>
+            </StackLayout>
+        <Label x:Name="sss"></Label>
+    </StackLayout>
+
+
+
+</ContentPage>
