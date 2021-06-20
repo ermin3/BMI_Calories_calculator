@@ -2,11 +2,11 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-   
-     xmlns:app1="clr-namespace:App1"
- 
-    x:Class="App1.AllFood">
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"   
+    xmlns:app1="clr-namespace:App1" 
+    x:Class="App1.AllFood"
+    BackgroundColor="Black"
+             >
 
     <StackLayout Padding="20">
         <StackLayout HeightRequest="500">
@@ -97,7 +97,5 @@
             </StackLayout>
         <Label x:Name="sss"></Label>
     </StackLayout>
-
-
 
 </ContentPage>
