@@ -1,12 +1,71 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.About_US">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="App1.About_US"
+             Padding="30"
+              BackgroundColor="Black">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+
+
+            </Grid.ColumnDefinitions>
+            <BoxView Color="#2196F3" Grid.Row="0" Grid.Column="0"  Opacity="0.2"  Grid.ColumnSpan="2" />
+            <BoxView Color="#2196F3" Grid.Row="1" Grid.Column="0"  Opacity="0.2"  Grid.ColumnSpan="2" />
+
+            <Image Source="https://cdn.shopify.com/s/files/1/0045/5104/9304/t/27/assets/AC_ECOM_SITE_2020_REFRESH_1_INDEX_M2_THUMBS-V2-1.jpg?v=8913815134086573859" 
+               HeightRequest="180" WidthRequest="200" VerticalOptions="Start" HorizontalOptions="End" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="20,10"/>
+            <Label Text="Adel Kečo &#13;2020/2021" TextColor="White" FontSize="25" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="1" Margin="10,50" />
+
+            <TableView Intent="Settings" BackgroundColor="#2196F3" Margin="03,10" Grid.Column="0" Grid.Row="0" Opacity="0.8" >
+              
+                    <TableSection Title="Contact " TextColor="Wheat">
+                        <TextCell Text="Phone" TextColor="Black" Detail="0603001391" DetailColor="White" />
+                        <TextCell Text="Emai address" TextColor="Black" Detail="adelkeco19@gmail.com" DetailColor="White" />
+                        <TextCell Text="Address" TextColor="Black" Detail="Bajre Kaljanca 25,Ilidza" DetailColor="White" />
+                    </TableSection>
+
+                    <TableSection Title="Education " TextColor="Wheat">
+                        <TextCell Text="High school" TextColor="Black" Detail="4 gimnazija(2017)" DetailColor="White" />
+                        <TextCell Text="Faculty" TextColor="Black" Detail="FSK Sarajevo(2021)" DetailColor="White"/>
+                    </TableSection>
+
+
+              
+            </TableView>
+
+            <Image Source="https://cdn.shopify.com/s/files/1/0045/5104/9304/t/27/assets/AC_ECOM_SITE_2020_REFRESH_1_INDEX_M2_THUMBS-V2-1.jpg?v=8913815134086573859"
+               HeightRequest="180" WidthRequest="200" VerticalOptions="Start" HorizontalOptions="End" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Margin="20,10"/>
+            <Label Text="Ermin Mesanovic &#13;2020/2021" TextColor="White" FontSize="25" VerticalOptions="End" HorizontalOptions="Center" HorizontalTextAlignment="Center" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1" Margin="10,40" />
+
+            <TableView Intent="Settings" BackgroundColor="#2196F3" Margin="15,10" Grid.Column="0" Grid.Row="1" Opacity="0.8">
+                
+                    <TableSection Title="Contact " TextColor="Wheat" >
+                        <TextCell Text="Phone" TextColor="Black" Detail="0603001391" DetailColor="White"  />
+                        <TextCell Text="Emai address" TextColor="Black" Detail="adelkeco19@gmail.com" DetailColor="White" />
+                        <TextCell Text="Address" TextColor="Black" Detail="Bajre Kaljanca 25,Ilidza" DetailColor="White" />
+                    </TableSection>
+
+                    <TableSection Title="Education " TextColor="Wheat">
+                        <TextCell Text="High school" TextColor="Black" Detail="4 gimnazija(2017)" DetailColor="White" />
+                        <TextCell Text="Faculty" TextColor="Black" Detail="FSK Sarajevo(2021)" DetailColor="White"/>
+                    </TableSection>
+
+
+                
+            </TableView>
+
+
+
+        </Grid>
+
+
 </ContentPage>
+

@@ -20,16 +20,16 @@ namespace App1
         double calories_w=0;
         double age;
         int selected;
-        double hight;
+        double height;
         double weight;
 
 
-//cret+ating event for making changes on the page
+//creating event for making changes on the page
         public void OnEntryTextChanged(object sender, EventArgs e)
         {
             
             double result = 0D;
-            next_page.IsVisible = false;   //yo can enter new page only if you enter all data
+            next_page.IsVisible = false;   //you can enter new page only if you enter all data
             NavTitle.FontSize = 24;
 
             //picking gender and setting picture for man/woman
@@ -54,38 +54,38 @@ namespace App1
             }
 
             //entry doesn't have to be null, calculating calories and BMI
-            if (double.TryParse(EntryHight.Text, out hight) && double.TryParse(EntryWeight.Text, out weight) && double.TryParse(Age.Text, out age))
+            if (double.TryParse(EntryHeight.Text, out height) && double.TryParse(EntryWeight.Text, out weight) && double.TryParse(Age.Text, out age))
             {
                 {
-                    if ((button_cm).IsChecked && (button_kg).IsChecked && hight != 0)
+                    if ((button_cm).IsChecked && (button_kg).IsChecked && height != 0)
                     {
-                        result = weight / (hight * hight / 10000);
-                        calories_m = (88.362 + (13.397 * weight) + (4.799 * hight) - (5.677 * age));
-                        calories_w = (447.593 + (9.247 * weight) + (3.098 * hight) - (4.330 * age));
+                        result = weight / (height * height / 10000);
+                        calories_m = (88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
+                        calories_w = (447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
 
                     }
-                    else if ((button_in).IsChecked && (button_lbs).IsChecked && hight != 0)
+                    else if ((button_in).IsChecked && (button_lbs).IsChecked && height != 0)
                     {
-                        hight *= 2.54;
+                        height *= 2.54;
                         weight /= 2.2046;
-                        result = (weight / (hight * hight / 10000));
-                        calories_m = (88.362 + (13.397 * weight) + (4.799 * hight) - (5.677 * age));
-                        calories_w = (447.593 + (9.247 * weight) + (3.098 * hight) - (4.330 * age));
+                        result = (weight / (height * height / 10000));
+                        calories_m = (88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
+                        calories_w = (447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
                     }
 
-                    else if ((button_in).IsChecked && (button_kg).IsChecked && hight != 0)
+                    else if ((button_in).IsChecked && (button_kg).IsChecked && height != 0)
                     {
-                        hight *= 2.54;
-                        result = weight / (hight * hight / 10000);
-                        calories_m = (88.362 + (13.397 * weight) + (4.799 * hight) - (5.677 * age));
-                        calories_w = (447.593 + (9.247 * weight) + (3.098 * hight) - (4.330 * age));
+                        height *= 2.54;
+                        result = weight / (height * height / 10000);
+                        calories_m = (88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
+                        calories_w = (447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
                     }
-                    else if ((button_cm).IsChecked && (button_lbs).IsChecked && hight != 0)
+                    else if ((button_cm).IsChecked && (button_lbs).IsChecked && height != 0)
                     {
                         weight /= 2.2046;
-                        result = weight / (hight * hight / 10000);
-                        calories_m = (88.362 + (13.397 * weight) + (4.799 * hight) - (5.677 * age));
-                        calories_w = (447.593 + (9.247 * weight) + (3.098 * hight) - (4.330 * age));
+                        result = weight / (height * height / 10000);
+                        calories_m = (88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age));
+                        calories_w = (447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age));
                     }
                     else
                     {

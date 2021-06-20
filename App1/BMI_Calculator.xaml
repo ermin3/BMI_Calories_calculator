@@ -116,12 +116,12 @@
             
         </RadioButton>
 
-        <Entry  x:Name="EntryHight"  
+        <Entry  x:Name="EntryHeight"  
                 Grid.Column="1"  
                 Grid.ColumnSpan="2" 
                 TextChanged="OnEntryTextChanged"  
                 Grid.Row="1" 
-                Placeholder="Hight" 
+                Placeholder="Height" 
                 ReturnType="Next"/>
 
         <Entry x:Name="EntryWeight" 
